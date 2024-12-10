@@ -23,15 +23,14 @@ pipeline {
 				
 			}
 		}
-stage( 'Scan') (
+stage( 'Scan') {
         steps {
           withSonarQubeEnv(installationName:'sonarqube_container'){
             sh './mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
           }
         }
 
-		
-		stage ('Deploy') {
+}stage ('Deploy') {
 			steps {
 				 
 				echo "build image docker "
