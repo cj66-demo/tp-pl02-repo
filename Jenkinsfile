@@ -4,6 +4,7 @@ pipeline {
 		stage('Build') {
 			steps {
 				echo "Etape de build"
+				sh './mvnw install'
 				
 			}
 		}
