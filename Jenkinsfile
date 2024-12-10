@@ -5,6 +5,7 @@ pipeline {
 			steps {
 				echo "Etape de build"
 				sh './mvnw install'
+				sh './mvnw spring-boot:run'
 				
 			}
 		}
